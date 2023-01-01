@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+   build: .
+   image: development/credential-service
+   ports: 
+    - "5050:5050"
+   env_file:
+    - .env
+   network_mode: host 
+   volumes:
+    - "/etc/timezone:/etc/timezone:ro"
+    - "/etc/localtime:/etc/localtime:ro" 
